@@ -1,0 +1,23 @@
+{% load crispy_forms_tags %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Registro</title>
+</head>
+<body>
+    {% include 'nav_bar.html' %}
+    <div class="container">
+        <ul>
+            {% for object in object_list %}
+                <li> <a href="{{ object.get_success_url }}">{{object|upper}} </a>  </li>
+            {% empty %}
+                <li>No hay registros en la base de datos</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>
+
+
