@@ -1,7 +1,9 @@
 from django.conf.urls import patterns, url
 from proyecto.views import *
+from django.contrib.auth.decorators import login_required,permission_required
 
 urlpatterns = [
+    #url(r'^$',inicio, name = 'inicio'),
     url(r'^$',home, name = 'home'),
     url(r'^crear/$', CrearRegistro.as_view(), name='crear_registro'),
     url(r'^lista_registros/$', ListaRegistro.as_view(), name='listar_registros'),

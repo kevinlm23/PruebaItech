@@ -1,0 +1,50 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+<br/>
+    <div class="container">
+        <div class="jumbotron">
+            <br/>
+            <h2 align="center">Iniciar Sesión</h2>
+            <hr/>
+            <form method="post">
+                {% csrf_token %}
+                 <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="form-group">
+                            <label for="username">Nombre de usuario:</label>
+                            <input class="form-control" type="text" name="username" placeholder="admin" required>
+                       </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="form-group">
+                            <label for="username">Contraseña:</label>
+                            <input class="form-control" type="password" name="password" placeholder="admin123" required>
+                       </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-5">
+                        <div class="form-group">
+                            <input class="btn btn-primary" type="submit" value="Ingresar">
+                       </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>
