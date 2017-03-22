@@ -15,4 +15,4 @@ A continuación se describen aspectos a tener en cuenta para la ejecución de la
     2. usuario: maria          * Permisos asignados desde el usuario super administrador: Solo puede añadir y actualizar registros.
         password: prueba123
 
-    NOTA: si el usuario intenta acceder a una funcón de la cual no tenga concedido el permiso este sera deslogueado
+    NOTA: si el usuario intenta acceder a una función de la cual no tenga concedido el permiso este sera deslogueado
