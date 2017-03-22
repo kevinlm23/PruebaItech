@@ -9,6 +9,7 @@ from django.contrib.auth.models import User
 class Empresa(models.Model):
     nombre = models.CharField(max_length=200)
     nombre_corto = models.CharField(max_length=200)
+    usu = models.OneToOneField('auth.User', null=True)
 
     def __unicode__(self):
         return self.nombre

@@ -3,11 +3,11 @@ from models import *
 # Register your models here.
 
 class EmpresaAdmin(admin.ModelAdmin):
-    search_fields = ['nombre','nombre_corto']
-    list_display = ('nombre','nombre_corto',)
+    search_fields = ['nombre','nombre_corto','usu']
+    list_display = ('nombre','nombre_corto','usu')
     fieldsets = (
         ("Informacion", {
-            'fields': ('nombre','nombre_corto',)
+            'fields': ('nombre','nombre_corto','usu')
         }),
     )
 

@@ -16,22 +16,15 @@ from django.contrib.auth.models import User
 @login_required
 def home(request):
     empresa = Empresa.objects.get(pk=3)
-    context = {
-        'empresa': empresa,
-    }
+
 
     usuario = request.user
-    #print usuario
-    # us = Empresa.objects.get(perfil=usuario)
-    # print us
-    # for a in us:
-    #     if usuario == a:
-    #         print "SI"
-    #         print a
-    #         break
-    #     else:
-    #         print "NO"
-    #         print a
+
+    usu = Empresa.objects.get(usu=usuario)
+
+    context = {
+        'empresa': usu,
+    }
 
     return render(request,'base.html', context)
 
