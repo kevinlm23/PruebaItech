@@ -15,10 +15,24 @@ from django.contrib.auth.models import User
 # Create your views here.
 @login_required
 def home(request):
-    empresa = Empresa.objects.get(pk=1)
+    empresa = Empresa.objects.get(pk=3)
     context = {
         'empresa': empresa,
     }
+
+    usuario = request.user
+    #print usuario
+    # us = Empresa.objects.get(perfil=usuario)
+    # print us
+    # for a in us:
+    #     if usuario == a:
+    #         print "SI"
+    #         print a
+    #         break
+    #     else:
+    #         print "NO"
+    #         print a
+
     return render(request,'base.html', context)
 
 
@@ -115,16 +129,6 @@ class EliminarRegistro(PermissionRequiredMixin, DeleteView):
               ]
     template_name = "eliminar_registro.html"
     permission_required = 'proyecto.delete_registro'
-    #permission_denied_message = "Su usuario no tiene permisos para eliminar"
-
-    # def get_permission_denied_message(self, **kwargs):
-    #     p = User.has_perm('random_permission')
-    #     if p == False:
-    #         print p
-    #         return reverse("home")
-    #     else:
-    #         print p
-    #         return reverse("home")
 
     def get_success_url(self):
         return reverse("listar_registros")

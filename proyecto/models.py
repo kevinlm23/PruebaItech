@@ -24,7 +24,7 @@ class Rol(models.Model):
         return self.nombre
 
 class Perfil(models.Model):
-    usuario = models.OneToOneField(User)
+    usuario = models.OneToOneField('auth.User')
     rol = models.ForeignKey(Rol)
 
     class Meta:
@@ -32,7 +32,7 @@ class Perfil(models.Model):
       verbose_name_plural = ('Perfiles')
 
     def __unicode__(self):
-        return self.nombre
+        return unicode(self.usuario)
 
 class Registro(models.Model):
     nombre = models.TextField()
