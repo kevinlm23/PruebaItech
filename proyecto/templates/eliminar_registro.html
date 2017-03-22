@@ -8,7 +8,7 @@
 <body>
     {% include 'nav_bar.html' %}
     <div class="container">
-        <form method = "POST" action="">
+        <form method = "POST" onsubmit="return CargarMensaje();">
         {% csrf_token %}
             <h4> Esta seguro que desea eliminar el registro "{{object.nombre}}" ? </h4>
             <hr/>
@@ -19,3 +19,9 @@
 
 </body>
 </html>
+
+<script type="text/javascript" >
+    function CargarMensaje(){
+        alert("Se ha eliminado el registro correctamente");
+    }
+</script>

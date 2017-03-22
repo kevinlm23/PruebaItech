@@ -21,6 +21,7 @@ def home(request):
     }
     return render(request,'base.html', context)
 
+
 #CBV de creacion de un registro
 class CrearRegistro(PermissionRequiredMixin, CreateView):
     model = Registro
@@ -36,6 +37,7 @@ class CrearRegistro(PermissionRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse("listar_registros")
+
 
 #CBV Para el listado de registros y detalles
 class ListaRegistro(ListView):
@@ -73,14 +75,6 @@ class ListaActualizarRegistro(PermissionRequiredMixin, ListView):
         context['sub_title'] = self.sub_title
         return context
 
-    # def get_perm(self, User):
-    #     p = User.has_perm('change_permission')
-    #     if p == False:
-    #         print p
-    #         return reverse("home")
-    #     else:
-    #         print p
-    #         return reverse("home")
 
 class ActualizarRegistro(PermissionRequiredMixin, UpdateView):
     model = Registro

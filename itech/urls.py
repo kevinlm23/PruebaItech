@@ -23,5 +23,4 @@ urlpatterns = [
     url(r'^home/', include('proyecto.urls')),
     url(r'^', login, {'template_name':'inicio.html'}, name="login"),
     url(r'^logout/', logout_then_login, name='logout'),
-
 ]

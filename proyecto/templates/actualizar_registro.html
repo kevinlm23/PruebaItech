@@ -7,12 +7,19 @@
 </head>
 <body>
     {% include 'nav_bar.html' %}
+    <form method="post" onsubmit="return CargarMensaje();">
     <div class="container">
         <h4> Actualizar un Registro </h4>
         <hr/>
         <text >{% crispy form %}</text>
         <br/>
     </div>
-
+    </form>
 </body>
 </html>
+
+<script type="text/javascript" >
+    function CargarMensaje(){
+        alert("Se ha actualizado el registro correctamente");
+    }
+</script>
